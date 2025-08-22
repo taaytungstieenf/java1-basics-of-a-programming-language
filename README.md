@@ -1,6 +1,6 @@
 ### Java Part 1 - BASIC OF A PROGRRAMMING LANGUAGE
 
-##### Cover all the foundational concepts of a programming language and it is writen in Java
+##### 💡 Cover all the foundational concepts of a programming language and it is writen in Java
 
   - a. Programming environment
   - b. Object-oriented programming
