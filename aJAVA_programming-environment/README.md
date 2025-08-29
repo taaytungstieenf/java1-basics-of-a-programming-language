@@ -1,17 +1,35 @@
 ### 1. Project Structure
 
 ```
-./aJAVA_environment
-|
-|______	src/
-|		|______	com/
-|				|______	example/
-|						|______	Main.java
+./aJAVA_programming-environment
 |
 |______	bin/
 |		|______	com/
 |				|______	example/
-|						|______	Main.class
+|						|______	part1
+|						|		|______ ver1
+|						|		|		|______ Main.class
+|						|		|______ ver2
+|						|				|______ Main.class
+|						|______ part2
+|								|______ ver1
+|								|		|______ Main.class
+|								|______ ver2
+|										|______ Main.class
+|
+|______	src/
+|		|______	com/
+|				|______	example/
+|						|______	part1
+|						|		|______ ver1
+|						|		|		|______ Main.java
+|						|		|______ ver2
+|						|				|______ Main.java
+|						|______ part2
+|								|______ ver1
+|								|		|______ Main.java
+|								|______ ver2
+|										|______ Main.java
 |
 |______	README.md
 ```
@@ -19,8 +37,8 @@
 
 ### 2. Compile project
 ```
-Interpret   : $ javac -d bin src/com/example/Main.java	
-Run         : $ java -cp bin com.example.Main
+Interpret   : $ javac -d bin src/com/example/part1/ver1/Main.java	
+Run         : $ java -cp bin com.example.part1.ver1.Main
 ```
 
 ### 3. Java Programming Language
