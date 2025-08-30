@@ -6,12 +6,12 @@
 |______	bin/
 |		|______	com/
 |				|______	example/
-|						|______	part1
+|						|______	part1SequentiallyCompile
 |						|		|______ ver1
 |						|		|		|______ Main.class
 |						|		|______ ver2
 |						|				|______ Main.class
-|						|______ part2
+|						|______ part2SimultaneouslyCompile
 |								|______ ver1
 |								|		|______ Main.class
 |								|______ ver2
@@ -20,12 +20,12 @@
 |______	src/
 |		|______	com/
 |				|______	example/
-|						|______	part1
+|						|______	part1SequentiallyCompile
 |						|		|______ ver1
 |						|		|		|______ Main.java
 |						|		|______ ver2
 |						|				|______ Main.java
-|						|______ part2
+|						|______ part2SimultaneouslyCompile
 |								|______ ver1
 |								|		|______ Main.java
 |								|______ ver2
@@ -36,9 +36,30 @@
 
 
 ### 2. Compile project
+
+##### Part 1 - Sequentially Compile
+
+
+Use	: $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+Note: $ javac -d bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+
+-d bin 	-> place to put new .class file
+-cp bin -> Show javac the existed bin folder to use Main1.class
+
 ```
-Interpret   : $ javac -d bin src/com/example/part1/ver1/Main.java	
-Run         : $ java -cp bin com.example.part1.ver1.Main
+Interpret   : $ javac -d bin src/com/example/part1SequentiallyCompile/ver1/Main1.java	
+Run         : $ java -cp bin com.example.part1SequentiallyCompile.ver1.Main1
+
+Interpret	: $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+Run 		: $	java -cp bin com.example.part1SequentiallyCompile.ver2.Main2
+```
+##### Part 2 - Simultaneously Complie
+
+Compile all the .java files in need to use run the .class file
+
+```
+Interpret	: $ javac -d bin src/com/example/part2SimultaneouslyCompile/ver1/Main1.java src/com/example/part2SimultaneouslyCompile/ver2/Main2.java
+Run 		: $ java -cp bin com.example.part2SimultaneouslyCompile.ver2.Main2
 ```
 
 ### 3. Java Programming Language
