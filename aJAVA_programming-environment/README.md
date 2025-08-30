@@ -44,8 +44,8 @@ Use	: $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2
 Not : $ javac -d bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
 
 
--d bin 	-> place to put new .class file  
--cp bin -> Show javac the existed bin folder to use Main1.class
+The place to put new .class file: <-d bin>
+Show javac the existed bin folder to use within Main1.class: <-cp bin>
 
 ```
 Interpret   : $ javac -d bin src/com/example/part1SequentiallyCompile/ver1/Main1.java	
