@@ -1,4 +1,4 @@
-package com.example.p1StateAndBehaviour.v1StateAndBehaviour;
+package com.example.part1StateAndBehaviour.v1StateAndBehaviour;
 
 public class Person {
 	
