@@ -40,11 +40,12 @@
 ##### Part 1 - Sequentially Compile
 
 
-Use	: $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
-Note: $ javac -d bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+- Use	: $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+- Not : $ javac -d bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
 
--d bin 	-> place to put new .class file
--cp bin -> Show javac the existed bin folder to use Main1.class
+
+- -d bin 	-> place to put new .class file
+- -cp bin -> Show javac the existed bin folder to use Main1.class
 
 ```
 Interpret   : $ javac -d bin src/com/example/part1SequentiallyCompile/ver1/Main1.java	
