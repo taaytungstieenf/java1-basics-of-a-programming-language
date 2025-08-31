@@ -2,53 +2,40 @@ package com.example.part1StateAndBehaviour.ver5AdvancedOOP;
 
 public class Club {
 
-	String name = "Nguyen Duc Tay";
-	String sex = "male";
-	int birthYear  = 1999;
-	String birthPlace = "Saigon";
-	String nationality = "Vietnamese";
+	String nation = "England";
+	String league = "English Premier League";
 
-	String school;
-	String district;
-	int joinYear;
+	String club_name;
+	String location;
+	String stadium;
 
-	public void primarySchool() {
-		this.school = "Binh Hoa";
-		this.district = "Binh Thanh";
-		this.joinYear = 2005;
+	public void Spurs() {
+		this.club_name = "Tottenham Hotspur";
+		this.location = "London";
+		this.stadium = "Tottenham Hotspur";
 	}
 
-	public void secondarySchool() {
-		this.school = "Ba Diem 2";
-		this.district = "12";
-		this.joinYear = 2010;
+	public void City() {
+		this.club_name = "Manchester City";
+		this.location = "Manchester";
+		this.stadium = "Etihad";
 	}
 
-	public void highSchool() {
-		this.school = "Nguyen Chi Thanh";
-		this.district = "Tan Binh";
-		this.joinYear = 2014;
-	}
+	public void Toffees() {
+		this.club_name = "Everton";
+		this.location = "Liverpool";
+		this.stadium = "Hill Dickinson";
+	}    
 
-	public void university() {
-		this.school = "University of Technology and Education";
-		this.district = "Thu Duc";
-		this.joinYear = 2017;
-	}
-
-	public void admission() {
-		System.out.println("Hoc sinh " + name + " sinh nam " + birthYear + " gioi tinh " + sex);
-		System.out.println("Noi sinh " + birthPlace + " quoc tich " + nationality);
-
-		System.out.println("Nam " + joinYear + " nhap hoc truong " + school + " o quan " + district);
+	public void ClubIntroduction() {
+		System.out.println(club_name + " football club is located in " + nation + ", playing in the " + league);
+		System.out.println("This club is based in " + location + " and the stadium is called " + stadium);
 	}
 
 	public static void main(String[] args) {
-		Person p = new Person();
+		Club c = new Club();
 
-		p.highSchool();
-
-		p.admission();
-
+		c.Spurs();
+		c.ClubIntroduction();
 	}
 }
