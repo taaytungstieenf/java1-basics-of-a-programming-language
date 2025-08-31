@@ -12,7 +12,7 @@ public class Club {
 	public void Spurs() {
 		this.club_name = "Tottenham Hotspur";
 		this.location = "London";
-		this.stadium = "Tottenham Hotspur";
+		this.stadium = "White Hart Lane";
 	}
 
 	public void City() {
