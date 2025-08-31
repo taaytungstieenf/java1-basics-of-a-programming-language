@@ -1,6 +1,6 @@
-package com.example.p1StateAndBehaviour.v3StateAndBehaviour;
+package com.example.part1StateAndBehaviour.ver5AdvancedOOP;
 
-public class Person {
+public class Club {
 
 	String name = "Nguyen Duc Tay";
 	String sex = "male";

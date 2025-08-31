@@ -5,11 +5,13 @@
 |______	bin/
 |		|______	com/
 |				|______	example/
+|						|
 |						|______	part1SequentiallyCompile
 |						|		|______ ver1
 |						|		|		|______ Main.class
 |						|		|______ ver2
 |						|				|______ Main.class
+|						|
 |						|______ part2SimultaneouslyCompile
 |								|______ ver1
 |								|		|______ Main.class
@@ -19,11 +21,13 @@
 |______	src/
 |		|______	com/
 |				|______	example/
+|						|
 |						|______	part1SequentiallyCompile
 |						|		|______ ver1
 |						|		|		|______ Main.java
 |						|		|______ ver2
 |						|				|______ Main.java
+|						|
 |						|______ part2SimultaneouslyCompile
 |								|______ ver1
 |								|		|______ Main.java

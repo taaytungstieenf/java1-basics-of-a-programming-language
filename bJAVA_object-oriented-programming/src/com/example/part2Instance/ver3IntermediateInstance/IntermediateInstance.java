@@ -1,4 +1,4 @@
-package com.example.p2Instance.v3Instance;
+package com.example.p2Instance.ver3IntermediateInstance;
 
 public class Person {
 

@@ -5,50 +5,62 @@
 |______	bin/
 |		|______	com/
 |				|______	example/
+|						|
 |						|______	part1StateAndBehaviour/
-|						|		|______ ver1BasicOOP
+|						|		|______ ver1BasicOOP/
 |						|		|		|______	BasicOOP.class	
-|						|		|______	ver2PreIntermediateOOP
+|						|		|______	ver2PreIntermediateOOP/
 |						|		|		|______	PreIntermediateOOP.class
-|						|		|______ ver3IntermediateOOP
-|						|		|		|______	IntermediateOOP.java
-|						|		|______	ver4UpperIntermediateOOP
+|						|		|______ ver3IntermediateOOP/
+|						|		|		|______	IntermediateOOP.class
+|						|		|______	ver4UpperIntermediateOOP/
 |						|		|		|______ UpperIntermediateOOP.class
-|						|		|______	ver5AdvancedOOP
-|						|		|		|______	AdvancedOOP.java
-
-
-|						|		|______	ver1StateAndBehaviour/
-|						|		|		|______	Person.class
-|						|		|______ ver2StateAndBehaviour/
-|						|				|______ Person.class
+|						|		|______	ver5AdvancedOOP/
+|						|				|______	AdvancedOOP.class
+|						|
 |						|______	part2Instance/
-|								|______	ver1Instance/
-|								|		|______	Person.class
-|								|______	ver2Instance/
-|										|______	Person.class
+|								|______	ver1BasicInstance/
+|								|		|______	BasicInstance.class
+|								|______	ver2PreIntermediateInstance/
+|								|		|______	PreIntermediateInstance.class
+|								|______	ver3IntermediateInstance/
+|								|		|______	IntermediateInstance.class
+|								|______ ver4UpperIntermediateInstance/
+|										|______	UpperIntermediateInstance.class
 |
 |______	src/
 |		|______	com/
 |				|______	example/
+						|
 |						|______	part1StateAndBehaviour/
-|						|		|______	ver1StateAndBehaviour/
-|						|		|		|______	Person.java
-|						|		|______ ver2StateAndBehaviour/
-|						|				|______ Person.java
+|						|		|______ ver1BasicOOP/
+|						|		|		|______	BasicOOP.java	
+|						|		|______	ver2PreIntermediateOOP/
+|						|		|		|______	PreIntermediateOOP.java
+|						|		|______ ver3IntermediateOOP/
+|						|		|		|______	IntermediateOOP.java
+|						|		|______	ver4UpperIntermediateOOP/
+|						|		|		|______ UpperIntermediateOOP.class
+|						|		|______	ver5AdvancedOOP/
+|						|				|______	AdvancedOOP.java
+|						|
 |						|______	part2Instance/
-|								|______	ver1Instance/
-|								|		|______	Person.java
-|								|______	ver2Instance/
-|										|______	Person.java
+|								|______	ver1BasicInstance/
+|								|		|______	BasicInstance.class
+|								|______	ver2PreIntermediateInstance/
+|								|		|______	PreIntermediateInstance.class
+|								|______	ver3IntermediateInstance/
+|								|		|______	IntermediateInstance.class
+|								|______ ver4UpperIntermediateInstance/
+|										|______	UpperIntermediate.class
 |
 |______	README.md
 ```
 
 ### Part 2. Compile Project
 ```
-Interpret	: $ javac -d bin src/com/example/part1StateAndBehaviour/ver1/Main1.java
-Run 		: $ java -cp bin com.example.part1StateAndBehaviour.ver1.Main1
+Interpret	: $ javac -d bin src/com/example/part/ver/class.java
+Run 		: $ java -cp bin com.example.part.ver.class
 ```
 
 ### Part 3. 
