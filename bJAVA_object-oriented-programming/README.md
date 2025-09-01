@@ -62,5 +62,3 @@
 Interpret	: $ javac -d bin src/com/example/part/ver/class.java
 Run 		: $ java -cp bin com.example.part.ver.class
 ```
-
-### Part 3. 
