@@ -6,13 +6,17 @@
 |		|______	com/
 |				|______	example/
 |						|
-|						|______	
+|						|______	ver0SampleCode
+|								|______ Bank.class
+|								|______ CheckingAccount.class
 |
 |______	src/
 |		|______	com/
 |				|______	example/
-						|
-|						|______	
+|						|
+|						|______ ver0SampleCode
+|								|______ Bank.java
+|								|______ CheckingAccount.java	
 |
 |______	README.md
 ```
