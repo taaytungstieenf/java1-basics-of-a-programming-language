@@ -19,6 +19,6 @@
 
 ### Part 2. Compile Project
 ```
-Interpret	: $ javac -d bin src/com/example/part1AccessEncapsulationAndScope/ver0Codecademy/CheckingAccount.java src/com/example/part1AccessEncapsulationAndScope/ver0Codecademy/Bank.java
-Run 		: $ java -cp bin com.example.part.ver.class
+Interpret	: $ javac -d bin src/com/example/part1AccessEncapsulationAndScope/ver0SampleCode/*.java
+Run 		: $ java -cp bin com.example.part1AccessEncapsulationAndScope.ver0Codecademy.Bank
 ```
