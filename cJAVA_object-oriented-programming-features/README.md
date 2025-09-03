@@ -23,6 +23,6 @@
 
 ### Part 2. Compile Project
 ```
-Interpret	: $ javac -d bin src/com/example/part1AccessEncapsulationAndScope/ver0SampleCode/*.java
-Run 		: $ java -cp bin com.example.part1AccessEncapsulationAndScope.ver0Codecademy.Bank
+Interpret	: $ javac -d bin src/com/example/part1AccessEncapsulationAndScope/ver1AccessAndScope/*.java
+Run 		: $ java -cp bin com.example.part1AccessEncapsulationAndScope.ver1AccessAndScope.Bank
 ```
