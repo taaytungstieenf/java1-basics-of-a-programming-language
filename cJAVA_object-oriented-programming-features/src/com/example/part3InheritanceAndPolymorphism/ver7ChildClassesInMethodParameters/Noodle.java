@@ -1,6 +1,5 @@
 package com.example.part3InheritanceAndPolymorphism.ver7ChildClassesInMethodParameters;
 
-
 class Noodle {
 
   protected double lengthInCentimeters;
