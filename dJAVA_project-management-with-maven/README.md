@@ -27,12 +27,6 @@ mvn archetype:generate -DgroupId=com.example \
                        -DartifactId=dJAVA_project-management-with-maven \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
                        -DinteractiveMode=false
-
-
-mvn archetype:generate -DgroupId=com.example \
-                       -DartifactId=. \
-                       -DarchetypeArtifactId=maven-archetype-quickstart \
-                       -DinteractiveMode=false
 ```
 
 ### Part 3. Compile Project
