@@ -4,9 +4,15 @@ mvn archetype:generate -DgroupId=com.example \
                        -DartifactId=modulename \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
                        -DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.example \
+					   -DartifactId=myproject \
+					   -DarchetypeArtifactId=maven-archetype-simple \
+					   -DinteractiveMode=false \
+
 ```
 
-### Part 1. Writing pom.xml
+### Part 2. Writing pom.xml
 
 ##### a. pom.xml of simple package
 ```
@@ -131,7 +137,7 @@ mvn archetype:generate -DgroupId=com.example \
 
 ```
 
-### Part 2. Compiling project
+### Part 3. Compiling project
 
 ##### a. Method 1: Compile code to target/classes
 ```

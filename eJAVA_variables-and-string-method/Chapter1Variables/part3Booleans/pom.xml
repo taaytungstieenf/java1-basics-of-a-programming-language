@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" 
+          xmlns="http://maven.apache.org/POM/4.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
     <groupId>com.example</groupId>
-    <artifactId>eJAVA-project-management-with-maven</artifactId>
+    <artifactId>Chapter1Variables</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
+  
   <groupId>com.example</groupId>
   <artifactId>part3Booleans</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>part3Booleans</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -20,7 +25,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-    <build>
+  
+  <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -36,4 +42,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
