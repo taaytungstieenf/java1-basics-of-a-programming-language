@@ -11,5 +11,12 @@
     <module>part2MultiplicationAndDivision</module>
     <module>part3Modulo</module>
     <module>part4CompoundAssignmentOperators</module>
+    <module>part5OrderOfOperations</module>
+    <module>part6GreaterThanAndLessThan</module>
+    <module>part7EqualsAndNotEquals</module>
+    <module>part8GreaterThanOrEqualTo</module>
+    <module>part9Equals</module>
+    <module>part10StringConcatenation</module>
+    <module>part11FinalKeyword</module>
   </modules>
 </project>

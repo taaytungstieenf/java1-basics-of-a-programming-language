@@ -4,12 +4,6 @@ mvn archetype:generate -DgroupId=com.example \
                        -DartifactId=modulename \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
                        -DinteractiveMode=false
-
-mvn archetype:generate -DgroupId=com.example \
-					   -DartifactId=myproject \
-					   -DarchetypeArtifactId=maven-archetype-simple \
-					   -DinteractiveMode=false \
-
 ```
 
 ### Part 2. Writing pom.xml
