@@ -135,12 +135,92 @@ mvn archetype:generate -DgroupId=com.example \
 
 ##### a. Method 1: Compile code to target/classes
 ```
-mvn compile
-java -cp target/classes com.example.App
+$ mvn compile
+$ java -cp target/classes com.example.App
 ```
 
 ##### b. Method 2: Run by jar
 ```
-mvn package
-java -jar target/modulename-1.0-SNAPSHOT.jar
+$ mvn package
+$ java -jar target/modulename-1.0-SNAPSHOT.jar
+```
+
+### Part 4. Configuring pom.xml to run many files in 1 project
+```
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+
+        <executions>
+
+          <execution>
+            <id>make-jar-introduction</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>introduction</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part1Introduction</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-length</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>length</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part2Length</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-concat</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>concat</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part3Concat</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+        </executions>
+        
+      </plugin>
+    </plugins>
+  </build>
+```
+
+```
+$ mvn package
+$ java -jar target/filename.jar
 ```
