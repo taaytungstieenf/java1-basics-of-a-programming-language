@@ -7,7 +7,7 @@
   - Object-oriented programming features
   - Project management with Maven (specific for a Java application)
   - Variables and string method
-  - Conditionals and control flow
+  - Conditionals, control flow and Loops
   - Arrays and ArrayLists then Two-Dimensional Arrays("structured data" in other languages)
   - Generic and collection framework
   - Exception handling
