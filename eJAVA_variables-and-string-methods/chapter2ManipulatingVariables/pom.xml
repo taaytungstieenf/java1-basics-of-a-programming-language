@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project    xmlns="http://maven.apache.org/POM/4.0.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example</groupId>
+  <artifactId>chapter2ManipulatingVariables</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>chapter2ManipulatingVariables</name>
+  
+  <modules>
+    <module>part0Introduction</module>
+    <module>part1AdditionAndSubtraction</module>
+    <module>part2MultiplicationAndDivision</module>
+    <module>part3Modulo</module>
+    <module>part4CompoundAssignmentOperators</module>
+    <module>part5OrderOfOperations</module>
+    <module>part6GreaterThanAndLessThan</module>
+    <module>part7EqualsAndNotEquals</module>
+    <module>part8GreaterThanOrEqualTo</module>
+    <module>part9Equals</module>
+    <module>part10StringConcatenation</module>
+    <module>part11FinalKeyword</module>
+  </modules>
+
+</project>
