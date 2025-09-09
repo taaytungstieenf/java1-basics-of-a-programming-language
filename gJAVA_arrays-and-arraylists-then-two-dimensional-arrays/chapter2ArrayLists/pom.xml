@@ -1,0 +1,191 @@
+<project    xmlns="http://maven.apache.org/POM/4.0.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example</groupId>
+  <artifactId>chapter2ArrayLists</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>chapter2ArrayLists</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+ <build>
+    <plugins>
+      <plugin>
+      
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+
+        <executions>
+
+          <execution>
+            <id>make-jar-part1Introduction</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part1Introduction</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part1Introduction.Shopping</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part2CreatingArrayLists</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part2CreatingArrayLists</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part2CreatingArrayLists.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part3AddingAnItem</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part3AddingAnItem</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part3AddingAnItem.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part4ArrayListSize</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part4ArrayListSize</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part4ArrayListSize.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part5AccessingAnIndex</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part5AccessingAnIndex</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part5AccessingAnIndex.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part6ChangingAValue</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part6ChangingAValue</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part6ChangingAValue.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part7RemovingAnItem</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part7RemovingAnItem</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part7RemovingAnItem.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part8GettingAnItemIndex</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part8GettingAnItemIndex</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part8GettingAnItemIndex.ToDos</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+        </executions>
+        
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

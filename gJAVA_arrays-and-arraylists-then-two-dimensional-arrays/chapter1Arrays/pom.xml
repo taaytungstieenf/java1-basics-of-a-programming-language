@@ -1,0 +1,172 @@
+<project    xmlns="http://maven.apache.org/POM/4.0.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example</groupId>
+  <artifactId>chapter1Arrays</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>chapter1Arrays</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+      
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+
+        <executions>
+
+          <execution>
+            <id>make-jar-part1Introduction</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part1Introduction</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part1Introduction.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part2CreatingAnArrayExplicity</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part2CreatingAnArrayExplicity</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part2CreatingAnArrayExplicity.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part3ImportingArrays</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part3ImportingArrays</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part3ImportingArrays.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part4GetElementByIndex</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part4GetElementByIndex</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part4GetElementByIndex.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part5CreatingAnEmptyArray</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part5CreatingAnEmptyArray</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part5CreatingAnEmptyArray.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part6Length</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part6Length</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part6Length.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part7StringArgs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part7StringArgs</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part7StringArgs.Main</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+        </executions>
+        
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
