@@ -8,11 +8,10 @@
   - Project management with Maven (specific for a Java application)
   - Variables and string method
   - Conditionals, control flow and Loops
-  - Arrays and ArrayLists then Two-Dimensional Arrays("structured data" in other languages)
+  - Arrays and ArrayLists then Two-Dimensional Arrays ("structured data" in other languages)
   - Generic and collection framework
   - Exception handling
   - Input and Output
-  - Annotation
 
 
 ### Part 1. Creating a pom project
