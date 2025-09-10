@@ -12,6 +12,7 @@
   - Generic and collection framework
   - Exception handling
   - Input and Output
+  - JUnit Testing
 
 
 ### Part 1. Creating a pom project
@@ -19,6 +20,13 @@
 mvn archetype:generate -DgroupId=com.example \
                        -DartifactId=modulename \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
+                       -DinteractiveMode=false
+
+
+mvn archetype:generate -DgroupId=com.example \
+                       -DartifactId=junit5-demo \
+                       -DarchetypeArtifactId=maven-archetype-quickstart \
+                       -DarchetypeVersion=1.4 \
                        -DinteractiveMode=false
 ```
 
