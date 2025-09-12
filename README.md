@@ -1,7 +1,4 @@
-### INTRODUCTION: BASIC OF A PROGRRAMMING LANGUAGE
-
-##### 💡 Cover all the foundational concepts of a programming language and it is writen in Java
-
+### Part 0. Introduction
   - Programming environment
   - Object-oriented programming
   - Object-oriented programming features
@@ -14,49 +11,162 @@
   - Input and Output
   - JUnit Testing
 
-
-### Part 1. Creating a pom project
+### Part 1. Java Standared Edition
 ```
-mvn archetype:generate -DgroupId=com.example \
-                       -DartifactId=modulename \
+./aJAVA_programming-environment
+|
+|______ bin/
+|       |______ com/
+|               |______ example/
+|                       |
+|                       |______ part1SequentiallyCompile
+|                       |       |______ ver1
+|                       |       |       |______ Main.class
+|                       |       |______ ver2
+|                       |               |______ Main.class
+|                       |
+|                       |______ part2SimultaneouslyCompile
+|                               |______ ver1
+|                               |       |______ Main.class
+|                               |______ ver2
+|                                       |______ Main.class
+|
+|______ src/
+        |______ com/
+                |______ example/
+                        |
+                        |______ part1SequentiallyCompile
+                        |       |______ ver1
+                        |       |       |______ Main.java
+                        |       |______ ver2
+                        |               |______ Main.java
+                        |
+                        |______ part2SimultaneouslyCompile
+                                |______ ver1
+                                |       |______ Main.java
+                                |______ ver2
+                                        |______ Main.java
+ 
+SEQUENTIALLY COMPILE
+
+        Interpret   : $ javac -d bin src/com/example/part1SequentiallyCompile/ver1/Main1.java 
+        Run         : $ java -cp bin com.example.part1SequentiallyCompile.ver1.Main1
+
+        Interpret   : $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java
+        Run         : $ java -cp bin com.example.part1SequentiallyCompile.ver2.Main2
+
+SIMULTANEOUSLY COMPILE
+
+        Interpret   : $ javac -d bin src/com/example/part2SimultaneouslyCompile/ver1/Main1.java \
+                                     src/com/example/part2SimultaneouslyCompile/ver2/Main2.java
+        Run         : $ java -cp bin com.example.part2SimultaneouslyCompile.ver1.Main1
+                      $ java -cp bin com.example.part2SimultaneouslyCompile.ver2.Main2
+```
+
+
+### Part 2. Java with Maven Project
+```
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
-                       -DinteractiveMode=false
-
-
-mvn archetype:generate -DgroupId=com.example \
-                       -DartifactId=junit5-demo \
-                       -DarchetypeArtifactId=maven-archetype-quickstart \
-                       -DarchetypeVersion=1.4 \
+                       -DarchetypeVersion=1.5 \
+                       -DgroupId=com.mycompany.app \
+                       -DartifactId=my-app \
+                       -Dversion=1.0-SNAPSHOT \
                        -DinteractiveMode=false
 ```
 
-### Part 2. Writing pom.xml
-
-##### a. pom.xml of simple package
+##### a. pom.xml of simple module
 ```
+<?xml version="1.0" encoding="UTF-8"?>
 <project  xmlns="http://maven.apache.org/POM/4.0.0" 
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example</groupId>
-  <artifactId>modulename</artifactId>
-  <packaging>jar</packaging>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>project_name</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>modulename</name>
-  <url>http://maven.apache.org</url>
+
+  <name>singlemodule</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Optionally: parameterized tests support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.4.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.12.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.6.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -71,70 +181,218 @@ mvn archetype:generate -DgroupId=com.example \
             </configuration>
         </plugin>
     </plugins>
+
   </build>
 
 </project>
 
+
+COMPILE AND RUN
+
+        $ mvn compile
+        $ java -cp target/classes com.example.App
+
+        $ mvn package
+        $ java -jar target/modulename-1.0-SNAPSHOT.jar
 ```
 
-##### b. pom.xml of parent package
+
+##### b. 1 Maven outside vs. many Mavens inside 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project  xmlns="http://maven.apache.org/POM/4.0.0" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example</groupId>
-  <artifactId>parentmodule</artifactId>
-  <packaging>pom</packaging>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>project_name</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>parentmodule</name>
-  <url>http://maven.apache.org</url>
 
-  <modules>
-    <module>childmodule1</module>
-    <module>childmodule2</module>
-    <module>childmodule3</module>
-  </modules>
+  <name>parents_name</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Optionally: parameterized tests support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.4.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.12.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.6.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <modules>
+      <module>child_name1</module>
+      <module>child_name2</module>
+      <module>child_name3</module>
+    </modules>
+
+  </build>
   
 </project>
 
-```
+---
 
-##### c. pom.xml of child package
-```
-<?xml version="1.0"?>
-<project    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" 
-            xmlns="http://maven.apache.org/POM/4.0.0"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<project  xmlns="http://maven.apache.org/POM/4.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.example</groupId>
-    <artifactId>parentmodule</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-
-  <groupId>com.example</groupId>
+  <groupId>com.mycompany.app</groupId>
   <artifactId>childmodule</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>childmodule</name>
-  <url>http://maven.apache.org</url>
+
+  <name>childmodule1</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Optionally: parameterized tests support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.4.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.12.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.6.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -155,21 +413,7 @@ mvn archetype:generate -DgroupId=com.example \
 
 ```
 
-### Part 3. Compiling project
-
-##### a. Method 1: Compile code to target/classes
-```
-$ mvn compile
-$ java -cp target/classes com.example.App
-```
-
-##### b. Method 2: Run by jar
-```
-$ mvn package
-$ java -jar target/modulename-1.0-SNAPSHOT.jar
-```
-
-### Part 4. Configuring pom.xml to run many files in 1 project
+##### c. Many modules in com/example
 ```
   <build>
     <plugins>
@@ -193,16 +437,16 @@ $ java -jar target/modulename-1.0-SNAPSHOT.jar
         <executions>
 
           <execution>
-            <id>make-jar-introduction</id>
+            <id>make-jar-part1</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
-              <finalName>introduction</finalName>
+              <finalName>part1</finalName>
               <archive>
                 <manifest>
-                  <mainClass>com.example.part1Introduction</mainClass>
+                  <mainClass>com.example.part1.Main</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
@@ -212,16 +456,16 @@ $ java -jar target/modulename-1.0-SNAPSHOT.jar
           </execution>
 
           <execution>
-            <id>make-jar-length</id>
+            <id>make-jar-part2</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
-              <finalName>length</finalName>
+              <finalName>part2</finalName>
               <archive>
                 <manifest>
-                  <mainClass>com.example.part2Length</mainClass>
+                  <mainClass>com.example.part2.Main</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
@@ -231,16 +475,16 @@ $ java -jar target/modulename-1.0-SNAPSHOT.jar
           </execution>
 
           <execution>
-            <id>make-jar-concat</id>
+            <id>make-jar-part3</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
             <configuration>
-              <finalName>concat</finalName>
+              <finalName>part3</finalName>
               <archive>
                 <manifest>
-                  <mainClass>com.example.part3Concat</mainClass>
+                  <mainClass>com.example.part3.Main</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
@@ -257,7 +501,90 @@ $ java -jar target/modulename-1.0-SNAPSHOT.jar
   </build>
 ```
 
+##### d. Many java files in com/example/
 ```
-$ mvn package
-$ java -jar target/filename.jar
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+      
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6.0</version>
+
+        <executions>
+
+          <execution>
+            <id>make-jar-part1</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part1</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part1</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part2</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part2</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part2</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>make-jar-part3</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <finalName>part3</finalName>
+              <archive>
+                <manifest>
+                  <mainClass>com.example.part3</mainClass>
+                </manifest>
+              </archive>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+
+        </executions>
+        
+      </plugin>
+      
+    </plugins>
+  </build>
 ```
