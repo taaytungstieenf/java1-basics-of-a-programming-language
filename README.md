@@ -10,8 +10,9 @@
   - Exception handling
   - Input and Output
   - JUnit Testing
+  - Debugging
 
-### Part 1. Java Standared Edition
+### Part 1. Java Standard Edition
 ```
 ./aJAVA_programming-environment
 |
@@ -60,6 +61,7 @@ SIMULTANEOUSLY COMPILE                                                          
                                      src/com/example/part2SimultaneouslyCompile/ver2/Main2.java       |
         Run         : $ java -cp bin com.example.part2SimultaneouslyCompile.ver1.Main1                |
                       $ java -cp bin com.example.part2SimultaneouslyCompile.ver2.Main2                |
+______________________________________________________________________________________________________|
 ```
 
 
@@ -68,13 +70,13 @@ SIMULTANEOUSLY COMPILE                                                          
 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes \
                        -DarchetypeArtifactId=maven-archetype-quickstart \
                        -DarchetypeVersion=1.5 \
-                       -DgroupId=com.example.app \
+                       -DgroupId=com.example \
                        -DartifactId=my-app \
                        -Dversion=1.0-SNAPSHOT \
                        -DinteractiveMode=false
 ```
 
-##### a. pom.xml of simple module
+##### a. pom.xml of a single project
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <project  xmlns="http://maven.apache.org/POM/4.0.0" 
@@ -193,6 +195,7 @@ COMPILE AND RUN                                                              |
                                                                              |
         Package Java files  : $ mvn package                                  |
         Run jar files       : $ java -jar target/modulename-1.0-SNAPSHOT.jar |
+_____________________________________________________________________________|
 ```
 
 
@@ -238,16 +241,7 @@ Create jar file of each Java file
     <plugins>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
+      
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.6.0</version>
@@ -306,7 +300,7 @@ Create only jar file of project
   <build>
 
     <plugins>
-    
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
