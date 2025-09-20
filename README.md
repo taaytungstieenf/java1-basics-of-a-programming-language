@@ -20,47 +20,49 @@
 |       |______ com/
 |               |______ example/
 |                       |
-|                       |______ part1SequentiallyCompile
-|                       |       |______ ver1
-|                       |       |       |______ Main.class
-|                       |       |______ ver2
-|                       |               |______ Main.class
+|                       |______ part1Name
+|                       |       |______ Name.class
+|                       |______ part2Address
+|                       |       |______ Address.class
+|                       |______ part3Email
+|                       |       |______ Email.class
+|                       |______ part4Phone
+|                       |       |______ Phone.class
 |                       |
-|                       |______ part2SimultaneouslyCompile
-|                               |______ ver1
-|                               |       |______ Main.class
-|                               |______ ver2
-|                                       |______ Main.class
-|
+|                       |______ Main.class
+|                       
 |______ src/
         |______ com/
                 |______ example/
                         |
-                        |______ part1SequentiallyCompile
-                        |       |______ ver1
-                        |       |       |______ Main.java
-                        |       |______ ver2
-                        |               |______ Main.java
+                        |______ part1Name
+                        |       |______ Name.java
+                        |______ part2Address
+                        |       |______ Address.java
+                        |______ part3Email
+                        |       |______ Email.java
+                        |______ part4Phone
+                        |       |______ Phone.java
                         |
-                        |______ part2SimultaneouslyCompile
-                                |______ ver1
-                                |       |______ Main.java
-                                |______ ver2
-                                        |______ Main.java
+                        |______ Main.java
  
 -------------------------------------------------------------------------------------------------------
 SEQUENTIALLY COMPILE                                                                                  |
-        Interpret   : $ javac -d bin src/com/example/part1SequentiallyCompile/ver1/Main1.java         |
-        Run         : $ java -cp bin com.example.part1SequentiallyCompile.ver1.Main1                  |
                                                                                                       |
-        Interpret   : $ javac -d bin -cp bin src/com/example/part1SequentiallyCompile/ver2/Main2.java |
-        Run         : $ java -cp bin com.example.part1SequentiallyCompile.ver2.Main2                  |
+        Interpret   : $ javac -d bin src/com/example/part1Name/Name.java                              |
+                      $ javac -d bin src/com/example/part2Address/Address.java                        |
+                      $ javac -d bin src/com/example/part3Email/Email.java                            |
+                      $ javac -d bin src/com/example/part4Phone/Phone.java                            |
+                      $ javac -d bin src/com/example/Main.java                                        |
+                                                                                                      |
+        Run         : $ java -cp bin com.example.Main                                                 |
+------------------------------------------------------------------------------------------------------|
                                                                                                       |
 SIMULTANEOUSLY COMPILE                                                                                |
-        Interpret   : $ javac -d bin src/com/example/part2SimultaneouslyCompile/ver1/Main1.java \     |
-                                     src/com/example/part2SimultaneouslyCompile/ver2/Main2.java       |
-        Run         : $ java -cp bin com.example.part2SimultaneouslyCompile.ver1.Main1                |
-                      $ java -cp bin com.example.part2SimultaneouslyCompile.ver2.Main2                |
+                                                                                                      |
+        Interpret   : $ javac -d bin $(find src -name "*.java")                                       |
+                                                                                                      |
+        Run         : $ java -cp bin com.example.Main                                                 |
 ______________________________________________________________________________________________________|
 ```
 
