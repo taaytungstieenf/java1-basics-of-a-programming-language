@@ -1,12 +1,8 @@
 package com.mysquad.part2DF;
 
-import com.mysquad.part1GK.GoalKeepers;
-
 public class Defenders {
 
 	public static void main(String[] args) {
-
-		GoalKeepers.main(args);
 
 		System.out.println("23. Pedro Porro");
 		System.out.println("17. Cristian Romero");

@@ -57,7 +57,6 @@ SEQUENTIALLY COMPILE                                                            
                                                                                                       |
         Run         : $ java -cp bin com.example.Main                                                 |
 ------------------------------------------------------------------------------------------------------|
-                                                                                                      |
 SIMULTANEOUSLY COMPILE                                                                                |
                                                                                                       |
         Interpret   : $ javac -d bin $(find src -name "*.java")                                       |

@@ -88,18 +88,6 @@
     </pluginManagement>
 
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.3.0</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>com.mysquad.part1GK.GoalKeepers</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -108,33 +96,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>com.mysquad.part2DF.Defenders</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.3.0</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>com.mysquad.part3MF.Midfielders</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.3.0</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>com.mysquad.part4FW.Forwards</mainClass>
+                        <mainClass>com.mysquad.Squad</mainClass>
                     </manifest>
                 </archive>
             </configuration>
