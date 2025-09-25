@@ -145,7 +145,7 @@
               <finalName>chapter1StateAndBehaviour.part3IntermediateOOP</finalName>
               <archive>
                 <manifest>
-                  <mainClass>com.example.chapter1StateAndBehaviour.part2IntermediateOOP.Club</mainClass>
+                  <mainClass>com.example.chapter1StateAndBehaviour.part3IntermediateOOP.Club</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>

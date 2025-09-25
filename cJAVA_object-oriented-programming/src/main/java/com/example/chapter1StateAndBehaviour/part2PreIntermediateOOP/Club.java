@@ -1,43 +1,45 @@
 package com.example.chapter1StateAndBehaviour.part2PreIntermediateOOP;
 
-/**
 public class Club {
 
-    String club_name;
-    String location;
-    String stadium;
+    String clubname = "Tottenham Hotspur";
+    String location = "North London, England";
+
+    String stadium = "White Hart Lane";
+    String borough = "Haringey";
+
+    String street = "N17";
+    String postal = "N17 OBX";
+
+    String manager = "none";
+    String captain = "none";
+
+    String bestPlayer;
+    String bestTrophy;
 
     public static void main(String[] args) {
 
         Club c = new Club();
 
-        c.club_name = "Tottenham Hotspur";
-        c.location = "London, England";
-        c.stadium = "White Hart Lane";
+        c.manager = "Thomas Frank";
+        c.captain = "Cristian Romero";
 
-        System.out.println("Club name: " + c.club_name);
+        c.bestPlayer = "Harry Kane";
+        c.bestTrophy = "Uefa Europa League";
+
+        System.out.println("Club name: " + c.clubname);
         System.out.println("Location: " + c.location);
-        System.out.println("stadium: " + c.stadium);
-    }
-}
-**/
 
-public class Club {
+        System.out.println("Stadium: " + c.stadium);
+        System.out.println("Borough: " + c.borough);
 
-    String club_name = "none";
-    String location = "none";
-    String stadium = "none";
+        System.out.println("Street: " + c.street);
+        System.out.println("postal: " + c.postal);
 
-    public static void main(String[] args) {
+        System.out.println("Current manager: " + c.manager);
+        System.out.println("Current captain: " + c.captain);
 
-        Club c = new Club();
-
-        c.club_name = "Tottenham Hotspur";
-        c.location = "London, England";
-        c.stadium = "White Hart Lane";
-
-        System.out.println("Club name: " + c.club_name);
-        System.out.println("Location: " + c.location);
-        System.out.println("stadium: " + c.stadium);
+        System.out.println("Current best player: " + c.bestPlayer);
+        System.out.println("Current best trophy: " + c.bestTrophy);
     }
 }

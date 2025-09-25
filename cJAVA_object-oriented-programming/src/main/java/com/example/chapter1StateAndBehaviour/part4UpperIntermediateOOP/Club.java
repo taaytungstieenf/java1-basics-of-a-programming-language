@@ -2,44 +2,96 @@ package com.example.chapter1StateAndBehaviour.part4UpperIntermediateOOP;
 
 public class Club {
 
-    String club_name, location, stadium;
+    String clubname, location;
+    String stadium, borough;
+    String street, postal;
+    String manager, captain;
+    String bestPlayer, bestTrophy;
 
-    public void spurs() {
-        club_name = "Tottenham Hotspur";
+    public void Spurs() {
+
+        clubname = "Tottenham Hotspur";
         location = "North London, England";
+
         stadium = "White Hart Lane";
+        borough = "Haringey";
+
+        street = "N17";
+        postal = "N17 OBX";
+
+        manager = "Thomas Frank";
+        captain = "Cristian Romero";
+
+        bestPlayer = "Harry Kane";
+        bestTrophy = "Uefa Europa League";
     }
 
-    public void qpr() {
-        club_name = "Queens Park Rangers";
-        location = "West London, England";
-        stadium = "Loftus Road";
-    }
+    public void Irons() {
 
-    public void hammers() {
-        club_name = "West Ham United";
+        clubname = "West Ham United";
         location = "East London, England";
+
         stadium = "London Stadium";
+        borough = "Newham";
+
+        street = "E20";
+        postal = "E20 2ST";
+
+        manager = "Graham Potter";
+        captain = "Jarrod Bowen"; 
+
+        bestPlayer = "Mark Noble";
+        bestTrophy = "UEFA Europa Conference League 2023";
+    }
+
+    public void Lions() {
+
+        clubname = "Millwall";
+        location = "South London, England";
+
+        stadium = "The Den";
+        borough = "South Bermondsey";
+
+        street = "SE16";
+        postal = "SE16 3LN";
+
+        manager = "Joe Edwards";
+        captain = "Jake Cooper";
+
+        bestPlayer = "Zian Flemming";
+        bestTrophy = "FA Cup Runner-up 2004";
     }
 
     public void get_value() {
-        System.out.println("Club name: " + club_name);
+
+        System.out.println("Club name: " + clubname);
         System.out.println("Location: " + location);
+
         System.out.println("Stadium: " + stadium);
-        System.out.println();
+        System.out.println("Borough: " + borough);
+
+        System.out.println("Street: " + street);
+        System.out.println("postal: " + postal);
+
+        System.out.println("Current manager: " + manager);
+        System.out.println("Current captain: " + captain);
+
+        System.out.println("Current best player: " + bestPlayer);
+        System.out.println("Current best trophy: " + bestTrophy);
     }
 
     public static void main(String[] args) {
+
         Club s = new Club();
-        s.spurs();
+        s.Spurs();
         s.get_value();
 
-        Club q = new Club();
-        q.qpr();
-        q.get_value();
+        Club i = new Club();
+        i.Irons();
+        i.get_value();
 
-        Club h = new Club();
-        h.hammers();
-        h.get_value();
+        Club l = new Club();
+        l.Lions();
+        l.get_value();
     }
 }
