@@ -2,41 +2,51 @@ package com.example.chapter2Instance.part3IntermediateInstance;
 
 public class Club {
 
-	String club_name;
-	String location;
-	String stadium;
-	String nation;
-	String league;
+	String clubname, location;
+    String stadium, borough;
 
-	int foundedYear;
-	int currentYear;
+    int foundedYear;
+    int currentYear;
 	
-	public Club(String name, String place, String ground, String country, String tier) {
+	public Club(String Clubname, String Location, String Stadium, String Borough, int FoundedYear, int CurrentYear) {
 
-		this.club_name = name;
-		this.location = place;
-		this.stadium = ground;
-		this.nation = country;
-		this.league = tier;
-	}
+		this.clubname = Clubname;
+		this.location = Location;
 
-	public int getAge(int founded, int current) {
-    	return current - founded;
+		this.stadium = Stadium;
+		this.borough = Borough;
+
+		this.foundedYear = FoundedYear;
+		this.currentYear = CurrentYear;
 	}
 
 	public void ClubIntroduction() {
-		System.out.println(club_name + " football club is located in " + nation + ", playing in the " + league);
-		System.out.println("This club is based in " + location + " and the stadium is called " + stadium);
+
+		System.out.println("Clubname: " + clubname);
+		System.out.println("Location: " + location);
+		System.out.println("Stadium : " + stadium);
+		System.out.println("Borough : " + borough);
+	}
+
+	public int getAge(int founded, int current) {
+
+    	return current - founded;
 	}
 
 	public static void main(String[] args) {
 
-		Club spurs = new Club("Tottenham Hotspur", "London", "White Hart Lane", "England", "English Premier League");
+	    Club spurs = new Club("Tottenham Hotspur", "North London", "White Hart Lane", "Haringey", 1882, 2025);
+	    Club irons = new Club("West Ham United", "East London", "London Stadium", "Newham", 1895, 2025);
+	    Club lions = new Club("Millwall", "South London", "The Den", "South Bermondsey", 1885, 2025);
 
-		spurs.ClubIntroduction();
+	    spurs.ClubIntroduction();
+	    System.out.println("Age: " + spurs.getAge(spurs.foundedYear, spurs.currentYear) + " years\n");
 
-		int spursBirthyear = spurs.getAge(1882, 2025);
+	    irons.ClubIntroduction();
+	    System.out.println("Age: " + irons.getAge(irons.foundedYear, irons.currentYear) + " years\n");
 
-		System.out.println("Age of Spurs: " + spursBirthyear);
+	    lions.ClubIntroduction();
+	    System.out.println("Age: " + lions.getAge(lions.foundedYear, lions.currentYear) + " years\n");
 	}
+
 }

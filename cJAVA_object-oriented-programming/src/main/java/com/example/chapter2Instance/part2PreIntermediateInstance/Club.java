@@ -2,34 +2,38 @@ package com.example.chapter2Instance.part2PreIntermediateInstance;
 
 public class Club {
 
-	String club_name;
-	String location;
-	String stadium;
-	String nation;
-	String league;
+	String clubname, location;
+    String stadium, borough;
 	
-	public Club(String name, String place, String ground, String country, String tier) {
+	public Club(String Clubname, String Location, String Stadium, String Borough) {
 
-		this.club_name = name;
-		this.location = place;
-		this.stadium = ground;
-		this.nation = country;
-		this.league = tier;
+		this.clubname = Clubname;
+		this.location = Location;
+
+		this.stadium = Stadium;
+		this.borough = Borough;
 	}
 
 	public void ClubIntroduction() {
-		System.out.println(club_name + " football club is located in " + nation + ", playing in the " + league);
-		System.out.println("This club is based in " + location + " and the stadium is called " + stadium);
+
+		System.out.println("Clubname: " + clubname);
+		System.out.println("Location: " + location);
+		System.out.println("Stadium : " + stadium);
+		System.out.println("Borough : " + borough);
 	}
 
 	public static void main (String[] args) {
-		Club spurs = new Club("Tottenham Hotspur", "London", "White Hart Lane", "England", "English Premier League");
-		Club city = new Club("Manchester City", "Manchester", "Etihad", "England", "English Premier League");
+
+		Club spurs = new Club("Tottenham Hotspur", "North London", "White Hart Lane", "Haringey");
+		Club irons = new Club("West Ham United", "East London", "London", "Newham");
+		Club lions = new Club("Millwall", "South London", "The Den", "South Bermondsey");
 
 		spurs.ClubIntroduction();
-		city.ClubIntroduction();
+		irons.ClubIntroduction();
+		lions.ClubIntroduction();
 
 		System.out.println(spurs);
-		System.out.println(city);
+		System.out.println(irons);
+		System.out.println(lions);
 	}
 }
